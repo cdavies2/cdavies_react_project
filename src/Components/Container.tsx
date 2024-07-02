@@ -1,3 +1,4 @@
+import "./container.css";
 const Container = ({
     children,
     title,
@@ -6,8 +7,8 @@ const Container = ({
     title: string;
 })=>{
     return(
-        <div className="bg-green-600 p-4 border shadow rounded-md">
-      {title && <h2 className="text-xl pb-2 text-white">{title}</h2>}
+        <div id="styled">
+      {title && <h2>{title}</h2>}
       <div>{children}</div>
     </div>
     );

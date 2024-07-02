@@ -1,5 +1,6 @@
 // src/components/Input.tsx
 import { FormEvent, useState } from "react";
+import './input.css';
 
 
 const InputContainer = ({
@@ -17,10 +18,9 @@ const InputContainer = ({
         setNewTaskName("");
       }}
       >
-        <div className="flex flex-col">
-          <label className="text-white">Enter your next task:</label>
-          <input 
-          className="p-1 rounded-sm" 
+        <div>
+          <label>Enter your next task:</label>
+          <input  
           type="text"
           value={newTaskName} // Set the input value to newTask
           onChange={(e) => setNewTaskName(e.target.value)} // Set newTask to the input value whenever the user types something
@@ -28,7 +28,6 @@ const InputContainer = ({
         </div>
         <button
           type="submit"
-          className="bg-green-100 rounded-lg hover:bg-green-200 p-1"
         >
           Add task
         </button>

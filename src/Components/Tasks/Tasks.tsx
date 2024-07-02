@@ -1,6 +1,7 @@
 // src/components/Tasks/Tasks.tsx
 import { Task } from "../../App";
 import TaskItem from "./TaskItem";
+import "./tasks.css";
 
 const Tasks = ({ 
     tasks, 
@@ -12,7 +13,7 @@ const Tasks = ({
     handleDelete: (id: string) => void;
 }) => {
     return (
-        <div className="flex flex-col gap-2">
+        <div>
             {tasks.length ? (
             tasks.map((t) => (
                 <TaskItem 
@@ -25,7 +26,7 @@ const Tasks = ({
                 />
             ))
             ): (
-                <span className="text-green-100">No tasks yet!</span>
+                <span id="tasks">No tasks yet!</span>
 
         )}
         </div>

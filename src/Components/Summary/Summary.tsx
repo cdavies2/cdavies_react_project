@@ -1,6 +1,7 @@
 // src/components/Summary/Summary.tsx
 import {Task} from "../../App";
 import SummaryItem from "./SummaryItem";
+import './summary.css';
 
 const Summary = ({tasks}: {tasks: Task[]}) => {
     const total = tasks.length;
@@ -8,7 +9,7 @@ const Summary = ({tasks}: {tasks: Task[]}) => {
     const done = tasks.filter((t) => t.done == true).length
   return (
     <>
-      <div className="flex justify-between">
+      <div id="summary">
         <SummaryItem itemName={"Total"} itemValue={total} />
         <SummaryItem itemName={"To do"} itemValue={pending} />
         <SummaryItem itemName={"Done"} itemValue={done} />

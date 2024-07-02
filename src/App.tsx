@@ -5,17 +5,29 @@ import Container from "./Components/Container";
 import Input from "./Components/Input";
 import Summary from "./Components/Summary/Summary";
 import Tasks from "./Components/Tasks/Tasks";
-
+import './app.css';
 export interface Task {
   name: string;
   done: boolean;
   id: string;
 }
+const initialTasks = [
+  {
+    name: "task one",
+    done: false,
+    id: uuidv4(),
+  },
+  {
+    name: "task two",
+    done: true,
+    id: uuidv4(),
+  },
+];
 
 function App() {
-  const [tasks, setTasks] = useState<Task[]>([]);
+  const [tasks, setTasks] = useState<Task[]>(initialTasks);
   
-  const handleSubmit=(e: FormEvent<HTMLFormElement>, value: string)=> {
+  const handleSubmit=(e: React.FormEvent<HTMLFormElement>, value: string)=> {
     e.preventDefault();
     const newTask={
       name: value,
@@ -41,13 +53,13 @@ function App() {
   };
 
     return (
-      <div className="flex justify-center m-5">
-        <div className="flex flex-col items-center">
-          <div className="sm:w-[640px] border shadow p-10 flex flex-col gap-10">
+      <div id='outer'>
+        <div id="middle">
+        <div id="inner">
             <Container title={"Summary"}>
               <Summary tasks={tasks}/>
             </Container>
-            <Container>
+            <Container title={"Submit"}>
               <Input handleSubmit={handleSubmit}/>
             </Container>
             <Container title={"Tasks"}>

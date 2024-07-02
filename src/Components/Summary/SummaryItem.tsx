@@ -1,3 +1,4 @@
+import './summaryItem.css'
 const SummaryItem=({
     itemName,
     itemValue,
@@ -7,12 +8,13 @@ const SummaryItem=({
     itemValue: number,
 }) => {
     return (
-        <article className="bg-green-50 w-36 rounded-sm flex justify-between p-2">
-          <h3 className="font-bold">{itemName}</h3>
-          <span className="bg-green-900 text-white px-2 rounded-sm">
+        <article>
+          <h3>{itemName}</h3>
+          <span id="summary">
             {itemValue}
           </span>
         </article>
+        
     );
 };
 
